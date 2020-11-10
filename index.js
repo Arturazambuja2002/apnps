@@ -19,11 +19,19 @@ app.get('/',function(req,res){
 
 app.get('/usuarios',function(req,res){
     res.render('usuarios.ejs',{usuarios: [
-        {nome:"Artur", email:"arturazambuja2002@gmail.com"},
+        {nome:"Artur", ema,il:"arturazambuja2002@gmail.com"},
         {nome:"Amanda", email:"amanda2004@gmail.com"},
         {nome:"Elenara", email:"elenara@gmail.com"},
         {nome:"Paulo", email:"paulor@gmail.com"}
     ]})
+})
+
+app.get('/add', function(req,res){
+    res.render('adiciona.ejs')
+})
+
+app.post('/add', function(req,res){
+    console.log("Nome: " + req.body.txtNome + " Email:" + req.body.txtEmail)
 })
 
 app.listen(3000,function(){
